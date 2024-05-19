@@ -1,10 +1,11 @@
 import React from 'react'
-
+import video from '../assets/video.mp4'
 function Course() {
   return (
-    <div className=" h-max pt-24 bg-[url('https://w.wallhaven.cc/full/1p/wallhaven-1pel1v.jpg')] bg-contain">
-      <h1 className='text-8xl text-center mb-8 text-shad'>Courses</h1>
-      <div className='flex flex-wrap items-center justify-center'>
+    <div className=" h-max  ">
+      <video src={video} loop autoPlay muted className='object-cover w-screen h-full -z-10 fixed'></video>
+      <div className='flex flex-wrap items-center justify-center pt-24 flex-col'>
+      <h1 className='text-8xl text-center mb-8 z-10 text-white drop-shadow-[0_3.2px_3.6px_rgba(0,0,0,0.8)] font-bold'>Courses</h1>
         <Card className='ml-56'/>
         <Card/>
         <Card/>
