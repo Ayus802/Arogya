@@ -2,32 +2,47 @@ const express = require('express');
 const {User,Course} = require('../db/index')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const authMiddleware =require('../middleware/authMiddleware')
+const authMiddleware =require('../middleware/authMiddleware');
+const zod = require('zod');
 
 const router = express.Router()
 
+const loginSchema = zod.object({
+    username : zod.string().trim(),
+    password : zod.string().trim() 
+})
+
 router.post('/', async(req, res)=>{
-    const {username,password} = req.body;
+    const body = req.body;
+
+    const { success } = loginSchema.safeParse(body)
+
+    if (!success){
+        return res.status(400).json({
+            message: "typo error"
+        })
+    }
+
     try{
-        console.log(username);
+        
         const user = await User.find({
-            username: username,
+            username: body.username,
         });
         console.log(user);
-        const pass = await bcrypt.compare(password,user[0].password);
+        const pass = await bcrypt.compare(body.password,user[0].password);
         console.log(pass);
         
         if (user.length!=0 ){
-            const token = jwt.sign(username, process.env.jwt_secret);
-            res.cookie("token", token)
+            const token = jwt.sign(body.username, process.env.jwt_secret);
+            res.cookie("token",token);
             res.json({
-                message: "Logged In!",
+                message: `Logged In! ${token}`,
                 sucess : true
             });
         }
         else{
             res.json({
-                message: `user ${username} doesn't exist`,
+                message: `user ${body.username} doesn't exist`,
                 sucess : false
             })
         }

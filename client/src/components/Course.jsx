@@ -1,5 +1,8 @@
 import React from 'react'
 import video from '../assets/video.mp4'
+
+
+
 function Course() {
   return (
     <div className=" h-max  ">
@@ -7,12 +10,6 @@ function Course() {
       <div className='flex flex-wrap items-center justify-center pt-24 flex-col'>
       <h1 className='text-8xl text-center mb-8 z-10 text-white drop-shadow-[0_3.2px_3.6px_rgba(0,0,0,0.8)] font-bold'>Courses</h1>
         <Card className='ml-56'/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
       </div>
     </div>
   )

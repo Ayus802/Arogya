@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { Navigate, useNavigate } from 'react-router-dom';
-import ApiCall from '../server/ApiCall';
 
 function Login({setLoggedIn}) {
 
@@ -16,6 +15,7 @@ function Login({setLoggedIn}) {
     axios.post('http://localhost:8000/user/signIn/',{ username, password   })
     .then((result) => {
       if(result.data.sucess){
+        setLoggedIn(true);
         navigate('/courseDetail');
       }
       else{
@@ -30,6 +30,7 @@ function Login({setLoggedIn}) {
   return (
     <div className='bg-gray-800 min-h-screen min-w-screen flex items-center justify-center'>
       <div className='border border-white rounded-sm p-8 text-white flex flex-col text-lg max-w-fit shadow-gray-950 shadow-2xl'> 
+        
         <h1 className='text-3xl text-center mb-12'>Login</h1>
         <form onSubmit={HandleSubmit}>
           <label htmlFor="username" className='mb-4' >Username</label><br />
