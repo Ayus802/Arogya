@@ -7,6 +7,7 @@ import {Routes,Route} from 'react-router-dom'
 import Hero from './components/Hero'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import Purchased from './components/Purchased'
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <div className='sticky'>
+      <div >
         <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
       </div>
       <div>
@@ -22,8 +23,9 @@ function App() {
           <Route path='/login' element={<Login setLoggedIn={setLoggedIn}/>}/>
           <Route path='/signUp' element={<Signup/>}/>
           <Route path='/' element={<Hero/>}/>
-          <Route path='/CourseDetail' element={<CourseDetail/>}/>
+          <Route path='/CourseDetail/:id' element={<CourseDetail/>}/>
           <Route path='/course' element={<Course />}/>
+          <Route path='/purchase' element={<Purchased />}/>
         </Routes>
 
       </div>

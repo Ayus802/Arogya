@@ -16,7 +16,7 @@ function Login({setLoggedIn}) {
     .then((result) => {
       if(result.data.sucess){
         setLoggedIn(true);
-        navigate('/courseDetail');
+        navigate('/course');
       }
       else{
         console.log("invalid")
