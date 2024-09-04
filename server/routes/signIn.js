@@ -74,6 +74,7 @@ router.post('/createCourse', (req,res)=>{
 
 router.get('/course', async (req,res)=>{
     const courses = await Course.find()
+    console.log(courses)
     res.send(courses)
 })
 

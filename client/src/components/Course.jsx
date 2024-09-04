@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import video from '../assets/video.mp4'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -26,12 +25,12 @@ function Course() {
       <video src={video} loop autoPlay muted className='object-cover w-screen h-full -z-10 fixed'></video>
       <div className='flex flex-wrap items-center justify-center pt-24 flex-col'>
       <h1 className='text-8xl text-center mb-8 z-10 text-white drop-shadow-[0_3.2px_3.6px_rgba(0,0,0,0.8)] font-bold'>Courses</h1>
-        {courses.map((res)=> <Link to={`/courseDetail/${res._id}`}><Card key={res._id} title={res.title} description={res.description} price={res.price}/></Link>)}
+        {courses.map((res)=> <Card key={res._id} id={res._id} title={res.title} description={res.description} price={res.price}/>)}
       </div>
     </div>
   )
 }
-function Card({title, description, price}){
+function Card({id, title, description, price}){
   
   const truncatedDisc = description.length>200? description.slice(0,200)+"..." : description;
 
@@ -44,7 +43,7 @@ function Card({title, description, price}){
         <h2 className='text-3xl font-bold text-white'>{title}</h2>
         <p className='mt-4 text-lg text-white'>{truncatedDisc}</p>
         <span>{price}</span>
-        <button className='bg-orange-400 w-3/4 h-12 mt-4 rounded-md ml-5 text-xl text-white'>Buy Now</button>
+        <Link to={`/courseDetail/${id}`} className='bg-orange-400 w-3/4 h-12 mt-4 rounded-md ml-5 text-xl text-white'>View Details</Link>
       </div>
     </div>
   )
