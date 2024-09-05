@@ -45,7 +45,7 @@ export default function Navbar(){
             )
         }
     return(
-        <div className="bg-transparent h-14 z-50 font-mono flex justify-between pl-3 pr-3 backdrop-blur-lg items-center cursor-pointer shadow-sm shadow-gray-400 text-white w-full">
+        <div className="top-0 left-0 right-0 h-14 w-screen font-mono flex justify-between pl-3 pr-3 backdrop-blur-lg items-center cursor-pointer shadow-sm shadow-black text-white ">
             <div>
                 <Link to='/' className="font-mono">AROGYA</Link>
             </div>

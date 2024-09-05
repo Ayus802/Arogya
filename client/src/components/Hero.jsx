@@ -13,16 +13,16 @@ import { reviews } from '../assets/reviews'
 
 function Hero() {
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='flex flex-col justify-center items-center w-screen'>
 
       
       {/* page1 */}
 
-      <div  className='h-[95vh] w-screen flex justify-center items-center flex-col p-2'>
+      <div  className='h-[95vh] w-screen flex justify-center italic items-center flex-col p-2'>
         <h1 
-          className='text-5xl font-semibold font-serif mb-6 text-pink-300 text-center leading-normal lg:w-[60vw]'>Get a First Free Healing Session</h1>
+          className='text-5xl font-semibold font-mono  mb-6 text-yellow-300 text-center leading-normal lg:w-[60vw] drop-shadow-2xl'>Get a First Free Healing Session</h1>
         <p
-          className='text-lg text-white lg:w-[70vw]'>
+          className='text-lg text-white xl:w-[40vw] lg:w-[70vw]'>
           It can help reduce stress, anxiety, and depression by calming the nervous system and releasing negative emotions. It can enhance self-awareness, intuition, and creativity by opening the third eye and crown chakras, which are the centres of wisdom and insight.</p>
       </div>
 
@@ -44,7 +44,7 @@ function Hero() {
 
         {/* card container of page 2 */}
         
-        <div className='flex flex-wrap justify-around w-[85vw] mt-8'>
+        <div className='flex flex-wrap gap-10  mt-8 items-center justify-center'>
 
           {/* card 1 */}
           <div className='w-72 h-fit flex flex-col justify-center items-center p-4 border border-blue-700 rounded-xl shadow-lg transition-[width,shadow] duration-700 ease-out hover:ease-in-out hover:w-80 hover:shadow-blue-500'>
@@ -89,8 +89,8 @@ function Hero() {
 
       {/* page 3 start */}
       
-      <div className='my-32 flex flex-wrap justify-around items-center'>
-        <div className='w-[30rem] '>
+      <div className='my-32 flex flex-wrap gap-24 items-center justify-center p-2'>
+        <div className='sm:w-[95vw] lg:w-[25rem] '>
           <span className='text-blue-800'>OUR SERVICES</span>
           <h2 className='text-4xl my-7 text-slate-300'>Why Choose Avyaanam?</h2>
           <p className='text-white'>Because we provide complete healing in each course.
@@ -106,13 +106,13 @@ function Hero() {
       {/* page 4 start  */}
       <div>
           <h1
-            className='text-5xl font-medium font-serif mb-6 text-pink-300 text-center'>
+            className='text-5xl font-medium font-serif mb-6 text-pink-300 text-center p-2'>
               What people are saying…
             </h1>
           <p
             className='text-lg text-white text-center'>
               Read the testimonials of our happy customers</p>
-          <div className='my-16 flex flex-wrap justify-evenly '>
+          <div className='my-16 flex flex-wrap justify-evenly gap-7'>
             {reviews.map((res)=><div className='w-72 text-white flex flex-col justify-center p-8 rounded-xl shadow-sm shadow-black h-fit'>
               <p className='font-mono'>{res.review}</p>
               <span className='mt-6 text-lg font-mono font-semibold'>{res.client}</span>
@@ -124,8 +124,8 @@ function Hero() {
 
       {/* page 5 starts */}
 
-      <div className='flex flex-wrap justify-evenly items-center'>
-        <div className='w-[30rem] text-white'>
+      <div className='flex flex-wrap justify-evenly items-center mt-28 gap-24 p-2'>
+        <div className='sm:w-[95vw] lg:w-[30rem] text-white'>
           <span className='text-blue-800'>CHOOSE US</span>
           <h2 className='text-4xl my-7'>Why Make Us Your Trusted Partner</h2>
 
@@ -166,12 +166,12 @@ function Hero() {
         </div>
           <img src={page5} alt="" className='h-80 rounded-full shadow-2xl shadow-black'/>
       </div>
-      <div className='flex flex-wrap justify-evenly items-center my-16 px-14 py-14 rounded-3xl text-white bg-gradient-to-tr from-purple-950 to-purple-700 w-fit h-fit'>
+      <div className='flex flex-wrap justify-evenly items-center my-16 md:px-12 md:py-12 p-6 rounded-3xl text-white bg-gradient-to-tr from-purple-950 to-purple-700 gap-5 w-[85vw] '>
         <div className='w-[35rem]'>
           <h4 className='text-2xl font-semibold mb-4'>Start Your Journey With Us Today!</h4>
           <p className='text-md '>Whether you’re battling stress, chronic pain, or emotional challenges, our energy healing techniques are tailored to transform your struggles into strengths. Let us guide you toward a balanced, harmonious life.</p>
         </div>
-        <Link to={'/course'} className='h-fit py-4 px-8 text-xl bg-neutral-800 shadow-inner shadow-black rounded-full '>Course</Link>
+        <Link to='/course' className='h-fit py-4 px-8 text-xl bg-neutral-800 shadow-inner shadow-black rounded-full hover:shadow-2xl'>Course</Link>
       </div>
     </div>
   )
