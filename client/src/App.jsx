@@ -8,10 +8,12 @@ import Hero from './components/Hero'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Purchased from './components/Purchased'
+import LocomotiveScroll from 'locomotive-scroll';
 
 function App() {
 
   const [loggedIn , setLoggedIn] = useState(true);
+  const locomotive = new LocomotiveScroll()
 
   return (
     <React.Fragment>

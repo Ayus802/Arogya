@@ -10,6 +10,7 @@ import cube_shape2 from '../assets/ion_cube-sharp2.webp'
 import cube_shape3 from '../assets/ion_cube-sharp3.webp'
 import page5 from '../assets/chooseus.webp'
 import { reviews } from '../assets/reviews'
+import women from '../assets/woman-in-lotus-position-medium-light-skin-tone-svgrepo-com.svg'
 
 function Hero() {
   return (
@@ -18,13 +19,15 @@ function Hero() {
       
       {/* page1 */}
 
-      <div  className='h-[95vh] w-screen flex justify-center italic items-center flex-col p-2'>
+      <div data-scroll data-scroll-speed='-.3' className='h-[95vh] w-screen flex justify-center italic items-center  p-2'>
+        <img src={women} alt="" className='h-[30vw]' />
+        <div >
         <h1 
           className='text-5xl font-semibold font-mono  mb-6 text-yellow-300 text-center leading-normal lg:w-[60vw] drop-shadow-2xl'>Get a First Free Healing Session</h1>
         <p
-          className='text-lg text-white xl:w-[40vw] lg:w-[70vw]'>
+          className='text-lg text-white xl:w-[40vw] lg:w-[60vw]'>
           It can help reduce stress, anxiety, and depression by calming the nervous system and releasing negative emotions. It can enhance self-awareness, intuition, and creativity by opening the third eye and crown chakras, which are the centres of wisdom and insight.</p>
-      </div>
+      </div></div>
 
       {/* page1 over  */}
 
@@ -32,7 +35,7 @@ function Hero() {
 
 
 
-      <div className=' w-screen flex justify-center items-center flex-col p-2'>
+      <div className='border-t border-neutral-700 py-9 data-scroll data-scroll-speed=".2" w-screen flex justify-center items-center flex-col p-2 bg-neutral-800 z-50'>
 
         {/* heading of page 2 */}
 
@@ -71,7 +74,7 @@ function Hero() {
 
           {/* card 3 */}
 
-          <div className='w-72 h-fit flex flex-col justify-center items-center p-4 border border-blue-700 rounded-xl shadow-lg transition-[width,shadow] duration-700 ease-out hover:ease-in-out hover:w-80 hover:shadow-blue-500'>
+          <div className=' w-72 h-fit flex flex-col justify-center items-center p-4 border border-blue-700 rounded-xl shadow-lg transition-[width,shadow] duration-700 ease-out hover:ease-in-out hover:w-80 hover:shadow-blue-500'>
             <img src={tarot} alt="Healing" className='h-20 rounded-full mb-2' />
             <div className='text-center'>
               <h3 className='text-xl text-yellow-100 my-3'>Tarot Reading</h3>
@@ -89,7 +92,7 @@ function Hero() {
 
       {/* page 3 start */}
       
-      <div className='my-32 flex flex-wrap gap-24 items-center justify-center p-2'>
+      <div className=' my-32 flex flex-wrap gap-24 items-center justify-center p-2'>
         <div className='sm:w-[95vw] lg:w-[25rem] '>
           <span className='text-blue-800'>OUR SERVICES</span>
           <h2 className='text-4xl my-7 text-slate-300'>Why Choose Avyaanam?</h2>
@@ -104,7 +107,7 @@ function Hero() {
       {/* page 3 over  */}
 
       {/* page 4 start  */}
-      <div>
+      <div >
           <h1
             className='text-5xl font-medium font-serif mb-6 text-pink-300 text-center p-2'>
               What people are saying…
