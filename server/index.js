@@ -7,7 +7,7 @@ const cors = require('cors')
 const app = express()
 
 app.use(cors({
-    origin:'http://localhost:5173', 
+    origin:process.env.client_URL, 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }));
